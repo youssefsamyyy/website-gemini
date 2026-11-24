@@ -205,7 +205,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                 {showAssumptions && (
                   <div className="mt-4 space-y-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
                     <p className="text-xs leading-relaxed text-slate-600">
-                      Adjust the displayed Cloud 11 base rates for this proposal. The selected billing cycle determines the default rate.
+                      Adjust the Cloud 11 base rates for this proposal. The selected billing cycle determines the default rate.
                     </p>
                     <div className="grid grid-cols-3 gap-2.5">
                       {(['business', 'standard', 'plus'] as EditionId[]).map((id) => (
@@ -285,7 +285,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                 <div className="mt-1.5 font-mono text-2xl font-bold text-blue-700 tabular-nums">
                   {formatUsd(pricing.estimatedMonthlyUsd, 0)}
                 </div>
-                <div className="mt-1 text-[11px] text-slate-500">Indicative USD/mo</div>
+                <div className="mt-1 text-[11px] text-slate-500">Cloud 11 rate per user/month</div>
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-4">
