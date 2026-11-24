@@ -46,6 +46,7 @@ export interface ComparisonEditionMeta {
   seatRule: string;
   storageRule: string;
   antigravityRule: string;
+  pricingLabel: string;
 }
 
 export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionMeta> = {
@@ -58,6 +59,7 @@ export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionM
     seatRule: '1–500 users',
     storageRule: '25 GiB, pooled',
     antigravityRule: 'Not eligible',
+    pricingLabel: '$21/user/mo yearly · $25/user/mo monthly',
   },
   standard: {
     id: 'standard',
@@ -68,6 +70,7 @@ export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionM
     seatRule: '1 or more users',
     storageRule: '30 GiB, pooled',
     antigravityRule: '$10 / license / mo pooled',
+    pricingLabel: '$30/user/mo yearly · $35/user/mo monthly',
   },
   plus: {
     id: 'plus',
@@ -78,16 +81,18 @@ export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionM
     seatRule: '1 or more users',
     storageRule: '75 GiB, pooled',
     antigravityRule: '$15 / license / mo pooled',
+    pricingLabel: '$50/user/mo yearly · $60/user/mo monthly',
   },
   payg: {
     id: 'payg',
     name: 'Gemini Enterprise Pay-as-you-go',
     shortName: 'Pay-as-you-go',
     segment: 'Consumption Billing',
-    summary: 'Flexible usage-based tier starting with 1 minimum seat, full connectors, developer tools, and enterprise security.',
-    seatRule: '1 minimum seat requirement',
+    summary: 'Flexible consumption-only billing with access to Standard and Plus capabilities, instant deployment, no seat commitments, spend caps, and centralized usage controls.',
+    seatRule: 'No seat commitment',
     storageRule: 'Pay-as-you-go',
     antigravityRule: 'Pay-as-you-go billing',
+    pricingLabel: '$0 access fee · Pay only for consumption',
   },
   frontline: {
     id: 'frontline',
@@ -98,6 +103,7 @@ export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionM
     seatRule: '150+ Standard/Plus seats req.',
     storageRule: '2 GiB, pooled',
     antigravityRule: 'Not included',
+    pricingLabel: 'Contact Cloud 11',
   },
 };
 
@@ -131,7 +137,7 @@ export const EDITION_COMPARISON_ROWS: ComparisonRow[] = [
     business: { status: 'spec', label: '1–500 users' },
     standard: { status: 'spec', label: '1 or more users' },
     plus: { status: 'spec', label: '1 or more users' },
-    payg: { status: 'spec', label: '1 minimum seat requirement to get started' },
+    payg: { status: 'spec', label: 'No seat commitment' },
     frontline: { status: 'spec', label: '150 or more users of Standard or Plus editions' },
   },
   {
