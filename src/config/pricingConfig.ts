@@ -39,7 +39,7 @@ export interface PricingConfiguration {
  */
 export const PRICING_CONFIG: PricingConfiguration = {
   currency: 'USD',
-  isIndicativeBaseline: true,
+  isIndicativeBaseline: false,
   commercialDisclaimer:
     'Pricing reflects the Cloud 11 commercial rates supplied for this proposal. Standard and Plus yearly rates require a 12-month commitment; monthly rates have no commitment. Pay-as-you-go usage is billed separately at standard consumption rates.',
   weeklyDivisor: 4,
