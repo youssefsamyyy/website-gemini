@@ -231,7 +231,7 @@ export function buildProposalSummaryText(
     `Primary Contact: ${proposal.contactName || 'Decision Maker / IT Leadership'}`,
     `Generated Date: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`,
     '',
-    '1. LICENSING & INDICATIVE INVESTMENT ESTIMATE (USD)',
+    '1. LICENSING & COMMERCIAL INVESTMENT ESTIMATE (USD)',
     '--------------------------------------------------------------------',
     ...pricing.breakdown.map(
       (b) =>
