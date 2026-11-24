@@ -58,13 +58,13 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <p className="text-xs font-medium text-blue-700">
-              Investment Modeling · USD Indicative Estimator
+              Cloud 11 Commercial Rates · USD per user
             </p>
             <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
               Licensing & Investment Calculator
             </h2>
             <p className="mt-3 text-base text-slate-600">
-              Model single-edition or mixed-edition seat allocations across Business, Standard, and Plus. Standard and Plus seat counts synchronize directly with the Antigravity quota pool calculator below.
+              Model single-edition or mixed-edition seat allocations. Yearly pricing requires a 12-month commitment; monthly pricing has no commitment. Standard and Plus seat counts synchronize with the Antigravity quota pool calculator below.
             </p>
           </div>
 
@@ -153,9 +153,9 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                         </div>
                         <div className="text-right">
                           <div className="font-mono text-xs font-semibold text-slate-800 tabular-nums">
-                            {formatUsd(customRate)}/mo*
+                            {formatUsd(customRate)}/user/mo
                           </div>
-                          <div className="text-[11px] text-slate-500">indicative rate</div>
+                          <div className="text-[11px] text-slate-500">{proposal.billingCycle === 'annual' ? 'yearly commitment' : 'no commitment'}</div>
                         </div>
                       </div>
 
@@ -205,7 +205,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                 {showAssumptions && (
                   <div className="mt-4 space-y-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
                     <p className="text-xs leading-relaxed text-slate-600">
-                      Replace indicative planning rates below with official Cloud 11 quote rates or agreement discounts during live customer reviews.
+                      Adjust the displayed Cloud 11 base rates for this proposal. The selected billing cycle determines the default rate.
                     </p>
                     <div className="grid grid-cols-3 gap-2.5">
                       {(['business', 'standard', 'plus'] as EditionId[]).map((id) => (
@@ -312,7 +312,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                   Edition Cost Breakdown ({proposal.billingCycle === 'annual' ? 'Annual Plan View' : 'Monthly Plan View'})
                 </h3>
                 <span className="text-xs text-slate-500">
-                  Currency: USD · Indicative planning estimate
+                  Currency: USD · Cloud 11 supplied rates
                 </span>
               </div>
 
@@ -407,7 +407,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
               {/* Disclaimer + Actions */}
               <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-slate-600">
                 <span className="font-semibold text-slate-900">
-                  Indicative Estimate vs. Confirmed Quote:{' '}
+                  Commercial Pricing:{' '}
                 </span>
                 {PRICING_CONFIG.commercialDisclaimer}
               </div>
