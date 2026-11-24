@@ -1,0 +1,8 @@
+{
+  "name": "Cloud 11 | Gemini Enterprise Solutions",
+  "description": "Enterprise presales portal by Cloud 11, a Google Cloud Premier Partner, for evaluating Google Gemini Enterprise editions, licensing estimates, and Antigravity pooled AI usage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
