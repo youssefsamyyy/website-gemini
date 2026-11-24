@@ -290,12 +290,12 @@ const handlePrintPdf = () => {
             <div className="print-break-inside-avoid">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-display text-base font-bold text-slate-950">
-                  01. Selected Editions & Indicative Licensing Estimate
+                  01. Selected Editions & Commercial Licensing Estimate
                 </h3>
                 <span className="text-xs text-slate-500">
                   {pricing.discountPercent > 0
                     ? `Includes ${pricing.discountPercent}% planning discount assumption`
-                    : 'Indicative USD planning rates'}
+                    : 'Cloud 11 supplied commercial rates'}
                 </span>
               </div>
 
