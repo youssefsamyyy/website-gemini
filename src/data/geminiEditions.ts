@@ -88,7 +88,7 @@ export const COMPARISON_EDITIONS: Record<ComparisonEditionId, ComparisonEditionM
     name: 'Gemini Enterprise Pay-as-you-go',
     shortName: 'Pay-as-you-go',
     segment: 'Consumption Billing',
-    summary: 'Flexible consumption-only billing with access to Standard and Plus capabilities, instant deployment, no seat commitments, spend caps, and centralized usage controls.',
+    summary: 'Flexible consumption-only billing with access to all Standard and Plus features, instant deployment with a $0 access fee, no seat commitments, payment only for actual consumption at standard pay-as-you-go rates, usage tracking, spend caps, and centralized cost management.',
     seatRule: 'No seat commitment',
     storageRule: 'Pay-as-you-go',
     antigravityRule: 'Pay-as-you-go billing',
