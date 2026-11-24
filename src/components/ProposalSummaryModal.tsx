@@ -53,10 +53,33 @@ export const ProposalSummaryModal: React.FC<ProposalSummaryModalProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const handlePrintPdf = () => {
-    document.body.classList.add('printing-proposal');
-    window.print();
+const handlePrintPdf = () => {
+  document.body.classList.add('printing-proposal');
+
+  // Allow the browser to apply print styles before printing.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.print();
+    });
+  });
+};
+
+  useEffect(() => {
+  if (!open) return;
+
+  document.body.classList.add('printing-proposal');
+
+  const handleAfterPrint = () => {
+    document.body.classList.remove('printing-proposal');
   };
+
+  window.addEventListener('afterprint', handleAfterPrint);
+
+  return () => {
+    document.body.classList.remove('printing-proposal');
+    window.removeEventListener('afterprint', handleAfterPrint);
+  };
+}, [open]);
 
   const formattedDate = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
