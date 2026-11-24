@@ -119,7 +119,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                             : 'text-slate-600 hover:text-slate-900'
                         }`}
                       >
-                        {cycle}
+                        {cycle === 'annual' ? 'Yearly · 12-month commitment' : 'Monthly · no commitment'}
                       </button>
                     );
                   })}
@@ -197,7 +197,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                 >
                   <span className="inline-flex items-center gap-1.5">
                     <SlidersHorizontal className="h-3.5 w-3.5 text-blue-700" />
-                    <span>Adjust Indicative Rates & Commercial Assumptions</span>
+                    <span>Adjust Commercial Rates & Assumptions</span>
                   </span>
                   <span className="text-blue-700">{showAssumptions ? 'Hide' : 'Configure'}</span>
                 </button>
