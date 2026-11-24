@@ -260,6 +260,9 @@ export const EditionsComparison: React.FC<EditionsComparisonProps> = ({
                   <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
                     {meta.summary}
                   </p>
+                  <p className="mt-3 font-mono text-xs font-bold text-blue-800">
+                    {meta.pricingLabel}
+                  </p>
                 </div>
 
                 <div className="mt-4 space-y-1 border-t border-slate-100 pt-3 text-[11px]">
