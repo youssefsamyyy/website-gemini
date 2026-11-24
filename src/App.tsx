@@ -27,9 +27,9 @@ const INITIAL_PROPOSAL_STATE: ProposalState = {
   },
   billingCycle: 'annual',
   customRatesUsd: {
-    business: PRICING_CONFIG.editions.business.indicativeMonthlyUsd,
-    standard: PRICING_CONFIG.editions.standard.indicativeMonthlyUsd,
-    plus: PRICING_CONFIG.editions.plus.indicativeMonthlyUsd,
+    business: PRICING_CONFIG.editions.business.annualRateUsd,
+    standard: PRICING_CONFIG.editions.standard.annualRateUsd,
+    plus: PRICING_CONFIG.editions.plus.annualRateUsd,
   },
   discountPercent: 0,
   antigravityStandardAssigned: 15,
@@ -225,7 +225,15 @@ export default function App() {
           pricing={pricing}
           onUpdateCounts={updateEditionCount}
           onUpdateBillingCycle={(billingCycle) =>
-            setProposal((prev) => ({ ...prev, billingCycle }))
+            setProposal((prev) => ({
+              ...prev,
+              billingCycle,
+              customRatesUsd: {
+                business: PRICING_CONFIG.editions.business[billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
+                standard: PRICING_CONFIG.editions.standard[billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
+                plus: PRICING_CONFIG.editions.plus[billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
+              },
+            }))
           }
           onUpdateRate={(edition, rate) =>
             setProposal((prev) => ({
@@ -241,9 +249,9 @@ export default function App() {
               ...prev,
               discountPercent: 0,
               customRatesUsd: {
-                business: PRICING_CONFIG.editions.business.indicativeMonthlyUsd,
-                standard: PRICING_CONFIG.editions.standard.indicativeMonthlyUsd,
-                plus: PRICING_CONFIG.editions.plus.indicativeMonthlyUsd,
+                business: PRICING_CONFIG.editions.business[prev.billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
+                standard: PRICING_CONFIG.editions.standard[prev.billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
+                plus: PRICING_CONFIG.editions.plus[prev.billingCycle === 'annual' ? 'annualRateUsd' : 'monthlyRateUsd'],
               },
             }))
           }
